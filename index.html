@@ -1,19 +1,27 @@
 <!DOCTYPE html>
-<html lang="az">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Drone Far Show - We are the Drone Show Family</title>
-    <meta name="description" content="We are the Drone Show Family. Welcome to dronefarshow.com">
+    <title>dronefarshow.com - We are the Drone Show Family</title>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@700&family=Lato:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
 
-    <!-- Müasir və Təmiz CSS Stilləri -->
+    <!-- CSS Styles -->
     <style>
+        :root {
+            --primary-color: #8b8be8;
+            --primary-hover: #a9a9ee;
+            --bg-dark: #0d0d12;
+            --card-bg: rgba(20, 20, 30, 0.75);
+            --text-main: #f7f7f7;
+            --text-muted: #b1b1b1;
+        }
+
         * {
             box-sizing: border-box;
             margin: 0;
@@ -22,122 +30,204 @@
 
         body {
             font-family: 'Lato', sans-serif;
-            background-color: #121212;
-            color: #f7f7f7;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
             line-height: 1.6;
             overflow-x: hidden;
         }
 
-        h1, h2, h3, .brand-font {
+        h1, h2, h3 {
             font-family: 'Cabin', sans-serif;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
         }
 
-        /* Hero Section */
+        /* Hero Section with Background Image */
         .hero {
             position: relative;
             min-height: 100vh;
-            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+            background: linear-gradient(rgba(13, 13, 18, 0.85), rgba(13, 13, 18, 0.75)), 
                         url('https://img1.wsimg.com/isteam/ip/c7bd0181-f502-4515-b5f5-bd82d5afebbb/DALL%C2%B7E%202024-11-19%2021.02.05%20-%20A%20captivating%20co.webp') no-repeat center center/cover;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 24px;
+            padding: 40px 20px;
         }
 
         .hero h1 {
-            font-size: clamp(32px, 5vw, 56px);
-            margin-bottom: 16px;
+            font-size: clamp(32px, 5vw, 60px);
+            margin-bottom: 15px;
             color: #ffffff;
-            text-shadow: 0px 2px 20px rgba(0, 0, 0, 0.5);
+            text-shadow: 0 4px 20px rgba(139, 139, 232, 0.4);
         }
 
-        .hero p {
-            font-size: clamp(18px, 2vw, 22px);
-            color: #e2e2e2;
-            margin-bottom: 32px;
-            max-width: 700px;
+        .hero p.subtitle {
+            font-size: clamp(18px, 2.5vw, 24px);
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            font-weight: 700;
         }
 
-        /* Buttons */
+        /* Main Container */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+
+        /* Content Cards */
+        .card {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(139, 139, 232, 0.2);
+            border-radius: 12px;
+            padding: 45px 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .card:hover {
+            border-color: var(--primary-color);
+            transform: translateY(-5px);
+        }
+
+        .card h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #ffffff;
+            display: inline-block;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 5px;
+        }
+
+        .card p {
+            color: var(--text-muted);
+            font-size: 18px;
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+
+        .highlight-text {
+            color: #ffffff;
+            font-weight: 700;
+        }
+
+        /* Subscribe Section */
+        .subscribe-card {
+            text-align: center;
+            background: linear-gradient(135deg, rgba(20, 20, 30, 0.9), rgba(40, 40, 70, 0.8));
+        }
+
+        .subscribe-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-width: 500px;
+            margin: 25px auto 0 auto;
+        }
+
+        .subscribe-form input {
+            padding: 15px 20px;
+            border-radius: 6px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(0, 0, 0, 0.4);
+            color: #fff;
+            font-size: 16px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .subscribe-form input:focus {
+            border-color: var(--primary-color);
+        }
+
         .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            background-color: #8b8be8;
+            background-color: var(--primary-color);
             color: #000000;
             font-weight: 700;
-            padding: 14px 32px;
-            border-radius: 4px;
-            text-decoration: none;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-            cursor: pointer;
+            padding: 15px 30px;
+            border-radius: 6px;
             border: none;
+            cursor: pointer;
             font-size: 16px;
             text-transform: uppercase;
-            letter-spacing: 0.06em;
+            letter-spacing: 1px;
+            transition: background-color 0.3s, transform 0.2s;
         }
 
         .btn:hover {
-            background-color: #a9a9ee;
+            background-color: var(--primary-hover);
             transform: translateY(-2px);
-        }
-
-        /* Content Sections */
-        .section {
-            padding: 80px 24px;
-            max-width: 1100px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .section h2 {
-            font-size: 36px;
-            margin-bottom: 24px;
-            color: #ffffff;
-        }
-
-        .section p {
-            color: #b1b1b1;
-            font-size: 18px;
-            max-width: 800px;
-            margin: 0 auto 32px auto;
         }
 
         /* Footer */
         footer {
-            background-color: #0b0b0b;
-            padding: 40px 24px;
+            background-color: #070709;
+            padding: 30px 20px;
             text-align: center;
             color: #717171;
-            border-top: 1px solid #222;
-            font-size: 14px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 15px;
+        }
+
+        footer span {
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .card {
+                padding: 30px 20px;
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- Hero Bölməsi -->
+    <!-- Hero Bölməsi (Arxa fonda sizin şəkil ilə) -->
     <header class="hero">
-        <h1>Drone Far Show</h1>
-        <p>We are the Drone Show Family</p>
-        <a href="#contact" class="btn">Bizimlə Əlaqə</a>
+        <h1>WELCOME TO DRONEFARSHOW.COM</h1>
+        <p class="subtitle">We are the Drone Show Family</p>
     </header>
 
-    <!-- Haqqımızda Bölməsi -->
-    <main>
-        <section class="section" id="about">
-            <h2>Gələcəyin İşıq Şousu</h2>
-            <p>Səmanı sənət əsərinə çeviririk. Müasir dron texnologiyaları və vizual dizaynla tədbirlərinizi unudulmaz edirik.</p>
+    <!-- Əsas Məzmun -->
+    <main class="container">
+        
+        <!-- Kimik biz? -->
+        <section class="card">
+            <h2>Who Are We?</h2>
+            <p>We are a team that knows programming and also prepares for drone shows.</p>
+            <p>We think that we will be a great team with you and we will sign great projects.</p>
+            <p>It is important to develop along with your interest and passion for <span class="highlight-text">Drone technology and programming</span>, which is the Technology of the Future.</p>
+            <p class="highlight-text" style="margin-top: 20px;">Join us and grow with us!</p>
         </section>
+
+        <!-- Dron şousu necə işləyir? -->
+        <section class="card">
+            <h2>How Does The Drone Show Work?</h2>
+            <p><strong>Everything About Drone Light Shows.</strong> Drone light shows are performed by illuminated, synchronized, and choreographed groups of drones that arrange themselves into various aerial formations.</p>
+            <p>Almost any image can be recreated in the sky by a computer program that turns graphics into flight commands and communicates them to the drones.</p>
+        </section>
+
+        <!-- Abunə olma (Subscribe) bölməsi -->
+        <section class="card subscribe-card">
+            <h2>Subscribe</h2>
+            <p>Subscribe to our Free Lessons and Training</p>
+            <form class="subscribe-form" onsubmit="event.preventDefault(); alert('Uğurla abunə olundunuz!');">
+                <input type="email" placeholder="Enter your email address..." required>
+                <button type="submit" class="btn">Join Us And Grow With Us!</button>
+            </form>
+        </section>
+
     </main>
 
     <!-- Footer -->
-    <footer id="contact">
-        <p>&copy; 2026 dronefarshow.com. Bütün hüquqlar qorunur.</p>
+    <footer>
+        <p>Created By <span>Farid Humbatzada</span> &copy; 2026. All rights reserved.</p>
     </footer>
 
 </body>
